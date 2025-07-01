@@ -84,15 +84,26 @@ The overall process can be divided into the following 5 steps:
 
 
 ### (1) Prepare the environment
+#### Environment
+
+* Ubuntu
+* python 3.10+
+* cuda 11.8+
+* pytorch 2.0+
+
+#### Create a k8s pod
 ```
-Ubuntu
-python 3.8
-cuda==11.8
-gcc==7.5.0
-conda env create -f environment.yaml
-conda activate Anomalydiffusion
+git clone https://github.com/makinarocks/poc_jci_anomalydiffusion.git && cd poc_jci_anomalydiffusion
+cd infra
+make exp-pod
 ```
 
+#### Install pip and libraries
+After your pod is launched, get into your pod and excute blow.
+
+```bash
+bash setup.sh
+```
 
 ### (2) Checkpoint for LDM
 
